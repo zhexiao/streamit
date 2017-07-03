@@ -10,7 +10,7 @@ class DataSpout(Spout):
     def initialize(self, stormconf, context):
         # 生成iterator
         self.consumer = KafkaConsumer('network-monitor', bootstrap_servers=[
-            'localhost:9092', 'localhost:9093'
+            '192.168.33.31:9092', '192.168.33.31:9093'
         ])
 
     def next_tuple(self):
