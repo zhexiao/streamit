@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from kafka import KafkaProducer
 import time
 import pickle
