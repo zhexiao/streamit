@@ -46,3 +46,10 @@
 > source ~/env_storm/bin/activate
 > pip install -r storm/storm_requirements.txt
 ```
+
+#### Spark环境
+```shell
+# 安装pyspark
+> cd /vagrant/spark-2.1.1-bin-without-hadoop/python
+> pip install -e .
+```
