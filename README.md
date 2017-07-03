@@ -9,17 +9,23 @@
 
 #### Kafka 环境
 ```shell
+# 修改配置文件，允许远程连接到kafka
+> vim config/server.property
+修改下列行：
+advertised.listeners=PLAINTEXT://192.168.33.31:9092
+note:192.168.33.31是kafka启动的broker地址
+
 # 启动 zookeeper
-> ./bin/zookeeper-server-start.sh config/zookeeper.properties &
+> ./bin/zookeeper-server-start.sh config/zookeeper.properties
 
 # 启动 kafka server 0
-> ./bin/kafka-server-start.sh config/server.properties &
+> ./bin/kafka-server-start.sh config/server.properties
 
 # 启动 kafka server 1
-> ./bin/kafka-server-start.sh config/server-1.properties &
+> ./bin/kafka-server-start.sh config/server-1.properties 
  
 # 创建 topic
-> ./bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 1 --topic network-monitor
+> ./bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 2 --topic network-monitor
  
 # 检查 topic
 > ./bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic network-monitor
