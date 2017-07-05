@@ -8,7 +8,7 @@ import json
 sc = SparkContext(master="local[2]", appName="spark_with_kafka_demo")
 ssc = StreamingContext(sc, 5)
 
-zookeeper_host = 'localhost:2181'
+zookeeper_host = '192.168.33.31:2181'
 group_ids = 'spark-kafka-consumer-demo'
 topics = {
     'my-replicated-topic': 1
