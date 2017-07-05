@@ -2,6 +2,7 @@
 from kafka import KafkaProducer
 import time
 import pickle
+import json
 
 producer = KafkaProducer(bootstrap_servers=['localhost:9092', 'localhost:9093'])
 
@@ -14,6 +15,9 @@ while True:
     }
 
     # 二进制传输数据
-    producer.send('network-monitor', pickle.dumps(data))
+    # producer.send('my-replicated-topic', pickle.dumps(data))
+
+    # json编码传输
+    producer.send('my-replicated-topic', json.dumps(data).encode('utf-8'))
 
     time.sleep(2)
