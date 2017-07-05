@@ -4,7 +4,7 @@ import time
 import pickle
 import json
 
-producer = KafkaProducer(bootstrap_servers=['localhost:9092', 'localhost:9093'])
+producer = KafkaProducer(bootstrap_servers=['192.168.33.31:9092', '192.168.33.31:9093'])
 
 i = 0
 while True:
