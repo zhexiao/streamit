@@ -22,7 +22,7 @@ note:192.168.33.31是kafka启动的broker地址
 > ./bin/kafka-server-start.sh config/server.properties
 
 # 启动 kafka server 1
-> ./bin/kafka-server-start.sh config/server-1.properties 
+> ./bin/kafka-server-start.sh config/server-1.properties
  
 # 创建 topic
 > ./bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 2 --topic network-monitor
@@ -58,4 +58,7 @@ note:192.168.33.31是kafka启动的broker地址
 # 安装pyspark
 > cd /vagrant/spark-2.1.1-bin-without-hadoop/python
 > pip install -e .
+
+# 运行文件
+> ./bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.1.1 /vagrant/streamit/spark/stream_kafka.py
 ```
